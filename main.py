@@ -26,8 +26,8 @@ def patient(patient_id: str):
         return data[patient_id]
     raise HTTPException(status_code=404 , detail="patient is not found")
 
-@app.get('/correct')
-def correct():
+@app.get('/sort')
+def sortparient():
     return {"message":"connect is correct"}
 
 
