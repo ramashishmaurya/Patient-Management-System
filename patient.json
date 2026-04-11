@@ -1,10 +1,1 @@
-{"p1":
-{"name":"Ashish" , 
-"class":"completed" , 
-"source":"online"} , 
-"p2":{
-    "name":"mukesh" , 
-    "class":"completed" , 
-    "source":"online"
-}
-}
+{"p1": {"name": "Ashish", "class": "completed", "source": "online"}, "p2": {"name": "mukesh", "class": "completed", "source": "online"}, "p01": {"name": "Ashish", "height": 12, "weight": 90, "gender": "male"}, "p02": {"name": "Mukesh", "height": 6, "weight": 90, "gender": "male"}}

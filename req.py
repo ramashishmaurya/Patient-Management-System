@@ -44,4 +44,32 @@ def createpost(patient: Patient):
 @app.get('/view')
 def view():
     data = load_data()
-    return data 
+    return data
+
+@app.put('/update/{patient_id}')
+def updatedata(patient_id:str , patient:Patient):
+    data = load_data()
+
+    if patient.id not in data:
+        raise HTTPException(status_code=404 ,detail='patient not found')
+    
+    data[patient_id] = patient.model_dump(exclude=['id'])
+
+    save_data(data)
+    return JSONResponse(
+        status_code=201,
+        content={'message': 'Data is sucessfully updated '}
+    )
+
+@app.delete('/delete/{patient_id}')
+
+def deletedata(patient_id:str , patient:Patient):
+    data = load_data()
+    if patient.id not in data:
+        raise HTTPException(status_code=404 , detail='Patient_id is not found')
+    del data[patient_id]
+    save_data()
+    return{
+        'message':f"patient data {patient_id} is delete successfully "
+    }
+
